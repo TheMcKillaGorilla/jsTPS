@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+        <title>jsTPS_Tester</title>
+        <script src='./main.js' type="module" ></script>
+    </head>
+    <body>
+        <div style='display: flex; flex-direction: column; position: absolute; width: 80%; left: 10%; height: 90%; top: 5%'>
+            <div style='background-color: antiquewhite'>
+                <span id='menu_header'><strong>ENTER A SELECTION</strong></span><br />
+                1) Add a Transaction<br />
+                2) Undo a Transaction<br />
+                3) Redo a Transaction<br />
+                4) Clear All Transactions<br />
+                5) Reset Num and Transactions<br />             
+            </div>
+            <div style='width: 100%; '>
+                <span id='menu_prompt'><strong>Selection: </strong></span> <input id='input_text_field' type="text" />
+            </div>
+            <div style='width: 100%; '>
+                <textarea id='output_textarea' style='background-color:azure; width: 100%' rows='40'></textarea>
+            </div>
+        </div>
+    </body>
+</html>

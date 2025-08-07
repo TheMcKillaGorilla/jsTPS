@@ -5,6 +5,18 @@ to assist in the creation of undo/redo systems for JavaScript. Note, the
 framework uses an ES Modules format.<br />
 <br />
 
+## Front-End Usage
+
+Your application would generally only need one TPS. To start you'll need to create your jsTPS object, so 
+depending on where you put it you'll need to first import it. For example, if for a Web page root you have a
+js directory you might write:
+```js
+import { jsTPS } = './js/jstps/index.js'
+let tps = new jsTPS();
+```
+You would then adjust that path relative to the file making use of it and where you choose to place it in
+your own directory structure. 
+
 ## Node Installation
 
 Note that this library can be used in any JavaScript context. To make use of the <strong>jsTPS</strong> framework in your <strong>Node</strong> application you should install it using:
@@ -13,18 +25,6 @@ Note that this library can be used in any JavaScript context. To make use of the
 npm install jstps
 ```
 <br />
-
-## Front-End Usage
-
-Your application would generally only need one TPS. To start you'll need to create your jsTPS object, so 
-depending on where you put it you'll need to first import it. For example, if for a Web page root you have a
-js directory you might write:
-```js
-import { jsTPS } = import './js/jstps/index.js'
-let tps = new jsTPS();
-```
-You would then adjust that path relative to the file making use of it and where you choose to place it in
-your own directory structure. 
 
 ## Custom Transactions
 

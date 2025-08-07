@@ -1,6 +1,6 @@
 {
   "name": "jstps",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A Transaction Processing System to be used for implementing Undo/Redo in a JavaScript applicaiton.",
   "main": "index.js",
   "scripts": {

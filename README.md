@@ -1,7 +1,8 @@
 # jsTPS - A JavaScript Transaction Processing System
 
 The jsTPS framework provides an easy to use transaction processing system
-to assist in the creation of undo/redo systems for JavaScript.
+to assist in the creation of undo/redo systems for JavaScript.<br />
+<br />
 
 ## Installation
 
@@ -10,6 +11,7 @@ Note that this library can be used in any JavaScript context. To make use of the
 ```bash
 npm install jstps
 ```
+<br />
 
 ## Usage
 
@@ -53,23 +55,48 @@ do something like:
 document.getElementById("undo-button").disabled = !tps.hasTransactionToUndo();
 document.getElementById("redo-button").disabled = !tps.hasTransactionToRedo();
 ```
+<br />
 
-## Demonstration
+## Package Contents
 
-Note that the <strong>jsTPS</strong> project contains a demo script that shows you how you
+Note that as a public repository, you are free to download and examine the <strong>jsTPS</strong> 
+package, which really has three components:<br />
+<br />
+<ol>
+ <li><strong>Framework Source Code</strong> - the <code>jsTPS</code> &amp; <code>jsTPS_Transaction</code> classes
+ are the framework and are defined inside <strong>index.js</strong> in the package's root directory.<br /><br /></li>
+ <li><strong>Demo</strong> - found in <code>./bin/demo.js</code>, this demonstrates use of the
+ framework in a runnable example.<br /><br /></li>
+ <li><strong>Tests</strong> - found in <code>./test/test.js</code>, this contains Jest Unit tests
+ that verify the framework is in proper working order.<br /><br /></li>
+</ol>
+
+## Running the Demo
+
+Note that the <strong>jsTPS</strong> package contains a demo script that shows you how you
 might define your own transactions for the purpose of undo/redo in a JavaScript application.
-If you have forked the project you can run the demo as such:
+If you have installed the package for use in your program, you can run the demo using:
 ```bash
-node ./bin/demo.js
+node .\node_modules\jstps\bin\demo.js
 ```
+Or if you have forked the repository you can simply use the following from the root directory:
+```bash
+node .\\bin\demo.js
+```
+This will open a menu of choices where you can update an object which will be done using
+transactions. You can then undo and redo those transactions and the menu employs foolproof
+design such that undo and redo are only provided as options if they can be used.<br />
+<br />
 
 ## Running Tests
 
-The <strong>jsTPS</strong> project also contains <a href='https://jestjs.io/'>Jest</a> tests 
-that can be run using:
+Should you fork (or download) the <strong>jsTPS</strong> project you can also run tests that
+ensure the API does everything it indends. To run these tests, make sure <a href='https://jestjs.io/'>Jest</a> is installed and
+then run the tests using:
 ```bash
 npm test
 ```
+<br />
 
 ## License
 

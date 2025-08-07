@@ -8,23 +8,23 @@ let tps;
  * in various combinations.
  *  
  * Scenarios we will test:
- *  a) Instantiating the TPS
- *  b) brand new empty stack, then processTransaction
- *  c) process three transactions, then undo three transaction, then process a new transaction
- *  d) process three transactions, then undo three transaction, then redo two transactions, then process a new transaction
- *  e) process three transactions, then undo three transaction, then redo three transactions, then process a new transaction
- *  f) process three transactions, then undo three transactions, then redo one transaction, then process two new transactions
- *  g) process five transactions, then undo three transactions, then redo one transaction, then undo two transactions
- *  h) process five transactions, then undo two transactions, then process two transactions, then undo three transactions 
- *  i) process five transactions, then undo four transactions, then redo two transactions
- *  j) undoing a transaction on an empty stack, should throw an exception
- *  k) undoing a transaction when there are none to undo, should throw an exception
- *  l) redoing a transaction on an empty stack, should throw an exception
- *  m) redoing a transaction when there are none to redo, should throw an exception
- *  n) peeking at a transaction when there is only one in the stack
- *  o) peeking at a transaction at the top of a stack after multiple undos and redos
- *  p) peeking at a transaction in the middle of a stack after multiple undos and redos
- *  q) peeking at a transaction at the bottom of a stack after multiple undos and redos
+ *  1) Instantiating the TPS
+ *  2) brand new empty stack, then processTransaction
+ *  3) process three transactions, then undo three transaction, then process a new transaction
+ *  4) process three transactions, then undo three transaction, then redo two transactions, then process a new transaction
+ *  5) process three transactions, then undo three transaction, then redo three transactions, then process a new transaction
+ *  6) process three transactions, then undo three transactions, then redo one transaction, then process two new transactions
+ *  7) process five transactions, then undo three transactions, then redo one transaction, then undo two transactions
+ *  8) process five transactions, then undo two transactions, then process two transactions, then undo three transactions 
+ *  9) process five transactions, then undo four transactions, then redo two transactions
+ *  10) undoing a transaction on an empty stack, should throw an exception
+ *  11) undoing a transaction when there are none to undo, should throw an exception
+ *  12) redoing a transaction on an empty stack, should throw an exception
+ *  13) redoing a transaction when there are none to redo, should throw an exception
+ *  14) peeking at a transaction when there is only one in the stack
+ *  15) peeking at a transaction at the top of a stack after multiple undos and redos
+ *  16) peeking at a transaction in the middle of a stack after multiple undos and redos
+ *  17) peeking at a transaction at the bottom of a stack after multiple undos and redos
  */
 
 /**
@@ -58,7 +58,7 @@ afterEach(() => {
 /**
  * Jest test to make sure constructor creates an instance of jsTPS.
  */
-test('a) should create an instance of jsTPS', () => {
+test('Test #1) should create an instance of jsTPS', () => {
     const instance = new jsTPS();
     expect(instance).toBeInstanceOf(jsTPS);
 });
@@ -66,7 +66,7 @@ test('a) should create an instance of jsTPS', () => {
 /**
  * Jest test for a brand new empty stack, then processTransaction
  */
-test('b) brand new empty stack, then processTransaction', () => {
+test('Test #2) brand new empty stack, then processTransaction', () => {
     // REBUILD THE PERSON TEST DATA
     TestUtils.resetPersonTest(tps, "Vito", 65);
 
@@ -92,7 +92,7 @@ test('b) brand new empty stack, then processTransaction', () => {
 /**
  * Jest test for process three transactions, then undo three transaction, then process a new transaction
  */
-test('c) process three transactions, then undo three transaction, then process a new transaction', () => {
+test('Test #3) process three transactions, then undo three transaction, then process a new transaction', () => {
     // REBUILD THE PERSON TEST DATA
     TestUtils.resetPersonTest(tps, "Vito", 65);
 
@@ -128,7 +128,7 @@ test('c) process three transactions, then undo three transaction, then process a
 /**
  * Jest test for process three transactions, then undo three transaction, then redo two transactions, then process a new transaction
  */
-test('d) process three transactions, then undo three transaction, then redo two transactions, then process a new transaction', () => {
+test('Test #4) process three transactions, then undo three transaction, then redo two transactions, then process a new transaction', () => {
     // REBUILD THE PERSON TEST DATA
     TestUtils.resetPersonTest(tps, "Vito", 65);
 
@@ -153,7 +153,7 @@ test('d) process three transactions, then undo three transaction, then redo two 
 /**
  * Jest test for process three transactions, then undo three transaction, then redo three transactions, then process a new transaction
  */
-test('e) process three transactions, then undo three transaction, then redo three transactions, then process a new transaction', () => {
+test('Test #5) process three transactions, then undo three transaction, then redo three transactions, then process a new transaction', () => {
     // REBUILD THE PERSON TEST DATA
     TestUtils.resetPersonTest(tps, "Vito", 65);
 
@@ -180,7 +180,7 @@ test('e) process three transactions, then undo three transaction, then redo thre
 /**
  * Jest test for process three transactions, then undo three transactions, then redo one transaction, then process two new transactions
  */
-test('f) process three transactions, then undo three transactions, then redo one transaction, then process two new transactions', () => {
+test('Test #6) process three transactions, then undo three transactions, then redo one transaction, then process two new transactions', () => {
     // REBUILD THE PERSON TEST DATA
     TestUtils.resetPersonTest(tps, "Vito", 65);
 
@@ -207,7 +207,7 @@ test('f) process three transactions, then undo three transactions, then redo one
 /**
  * Jest test for process five transactions, then undo three transactions, then redo one transaction, then undo two transactions
  */
-test('g) process five transactions, then undo three transactions, then redo one transaction, then undo two transactions', () => {
+test('Test #7) process five transactions, then undo three transactions, then redo one transaction, then undo two transactions', () => {
     // REBUILD THE PERSON TEST DATA
     TestUtils.resetPersonTest(tps, "Vito", 65);
 
@@ -238,7 +238,7 @@ test('g) process five transactions, then undo three transactions, then redo one 
 /**
  * Jest test for process five transactions, then undo two transactions, then process two transactions, then undo three transactions
  */
-test('h) process five transactions, then undo three transactions, then process two transactions, then undo three transactions', () => {
+test('Test #8) process five transactions, then undo three transactions, then process two transactions, then undo three transactions', () => {
     // REBUILD THE PERSON TEST DATA
     TestUtils.resetPersonTest(tps, "Vito", 65);
 
@@ -269,7 +269,7 @@ test('h) process five transactions, then undo three transactions, then process t
 /**
  * Jest test for process five transactions, then undo four transactions, then redo two transactions
  */
-test('i) process five transactions, then undo four transactions, then redo two transactions', () => {
+test('Test #9) process five transactions, then undo four transactions, then redo two transactions', () => {
     // REBUILD THE PERSON TEST DATA
     TestUtils.resetPersonTest(tps, "Vito", 65);
 
@@ -301,7 +301,7 @@ test('i) process five transactions, then undo four transactions, then redo two t
 /**
  * Jest test for undoing a transaction on an empty stack, should throw an exception
  */
-test('j) undoing a transaction on an empty stack, should throw an exception', () => {
+test('Test #10) undoing a transaction on an empty stack, should throw an exception', () => {
     // REBUILD THE PERSON TEST DATA
     TestUtils.resetPersonTest(tps, "Vito", 65);
 
@@ -315,7 +315,7 @@ test('j) undoing a transaction on an empty stack, should throw an exception', ()
 /**
  * Jest test for undoing a transaction when there are none to undo, should throw an exception
  */
-test('k) undoing a transaction when there are none to undo, should throw an exception', () => {
+test('Test #11) undoing a transaction when there are none to undo, should throw an exception', () => {
     // REBUILD THE PERSON TEST DATA
     TestUtils.resetPersonTest(tps, "Vito", 65);
 
@@ -349,7 +349,7 @@ test('k) undoing a transaction when there are none to undo, should throw an exce
 /**
  * Jest test for redoing a transaction on an empty stack, should throw an exception
  */
-test('l) redoing a transaction on an empty stack, should throw an exception', () => {
+test('Test #12) redoing a transaction on an empty stack, should throw an exception', () => {
     // REBUILD THE PERSON TEST DATA
     TestUtils.resetPersonTest(tps, "Vito", 65);
 
@@ -363,7 +363,7 @@ test('l) redoing a transaction on an empty stack, should throw an exception', ()
 /**
  * Jest test for redoing a transaction when there are none to redo, should throw an exception
  */
-test('m) redoing a transaction when there are none to redo, should throw an exception', () => {
+test('Test #13) redoing a transaction when there are none to redo, should throw an exception', () => {
     // REBUILD THE PERSON TEST DATA
     TestUtils.resetPersonTest(tps, "Vito", 65);
 
@@ -392,7 +392,7 @@ test('m) redoing a transaction when there are none to redo, should throw an exce
 /**
  * Jest test for peeking at a transaction when there is only one in the stack
  */
-test('n) peeking at a transaction when there is only one in the stack', () => {
+test('Test #14) peeking at a transaction when there is only one in the stack', () => {
     // REBUILD THE PERSON TEST DATA
     TestUtils.resetPersonTest(tps, "Vito", 65);
 
@@ -421,7 +421,7 @@ test('n) peeking at a transaction when there is only one in the stack', () => {
 /**
  * Jest test for peeking at a transaction at the top of a stack after multiple undos and redos
  */
-test('o) peeking at a transaction at the top of a stack after multiple undos and redos', () => {
+test('Test #15) peeking at a transaction at the top of a stack after multiple undos and redos', () => {
     // REBUILD THE PERSON TEST DATA
     TestUtils.resetPersonTest(tps, "Vito", 65);
 
@@ -451,7 +451,7 @@ test('o) peeking at a transaction at the top of a stack after multiple undos and
 /**
  * Jest test for peeking at a transaction in the middle of a stack after multiple undos and redos
  */
-test('p) peeking at a transaction in the middle of a stack after multiple undos and redos', () => {
+test('Test #16) peeking at a transaction in the middle of a stack after multiple undos and redos', () => {
     // REBUILD THE PERSON TEST DATA
     TestUtils.resetPersonTest(tps, "Vito", 65);
 
@@ -479,7 +479,7 @@ test('p) peeking at a transaction in the middle of a stack after multiple undos 
 /**
  * Jest test for peeking at a transaction at the bottom of a stack after multiple undos and redos
  */
-test('q) peeking at a transaction at the bottom of a stack after multiple undos and redos', () => {
+test('Test #17) peeking at a transaction at the bottom of a stack after multiple undos and redos', () => {
     // REBUILD THE PERSON TEST DATA
     TestUtils.resetPersonTest(tps, "Vito", 65);
 

@@ -1,0 +1,33 @@
+{
+  "name": "jstps",
+  "version": "2.0.0",
+  "description": "A Transaction Processing System to be used for implementing Undo/Redo in a JavaScript applicaiton.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "bin": {
+    "your-demo": "./bin/demo.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheMcKillaGorilla/jsTPS.git"
+  },
+  "keywords": [
+    "Transaction",
+    "Processing",
+    "System",
+    "JavaScript",
+    "Undo",
+    "Redo"
+  ],
+  "author": "TheMcKillaGorilla",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/TheMcKillaGorilla/jsTPS/issues"
+  },
+  "homepage": "https://github.com/TheMcKillaGorilla/jsTPS#readme",
+  "devDependencies": {
+    "jest": "^30.0.5"
+  }
+}

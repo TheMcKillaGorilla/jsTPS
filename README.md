@@ -3,10 +3,6 @@
 The jsTPS framework provides an easy to use transaction processing system
 to assist in the creation of undo/redo systems for JavaScript.
 
-![Build Status](https://github.com/TheMcKillaGorilla/jsTPS/actions/workflow/test.yml)
-![Coverage](https://github.com/TheMcKillaGorilla/jsTPS)
-![License](https://github.com/TheMcKillaGorilla/jsTPS/license)
-
 ## Installation
 
 Note that this library can be used in any JavaScript context. To make use of the <strong>jsTPS</strong> framework in your <strong>Node</strong> application you should install it using:

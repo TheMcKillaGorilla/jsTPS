@@ -1,4 +1,4 @@
-class Person {
+export default class Person {
     constructor(initName, initAge) {
         this.name = initName;
         this.age = initAge;
@@ -29,5 +29,3 @@ class Person {
         return this.name + " (Age " + this.age + ")";
     }
 }
-
-module.exports = { Person };

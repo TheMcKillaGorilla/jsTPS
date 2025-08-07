@@ -7,7 +7,7 @@
  * @author TheMcKillaGorilla
  * @version 2.0
  */
-class jsTPS_Transaction {
+export class jsTPS_Transaction {
     /**
      * This method is called by jsTPS when a transaction is executed.
      */
@@ -31,7 +31,7 @@ class jsTPS_Transaction {
  * @author TheMcKillaGorilla
  * @version 2.0
  */
-class jsTPS {
+export class jsTPS {
     /**
      * Thrown when one tries to undo, or redo a transaction when
      * none is available for such an operation.
@@ -243,5 +243,3 @@ class jsTPS {
         }
     }
 }
-
-module.exports = { jsTPS, jsTPS_Transaction };

@@ -1,8 +1,8 @@
-const { Person } = require('../test/person/Person');
-const { IncrementAge_Transaction } = require('../test/person/IncrementAge_Transaction');
-const { ChangeName_Transaction } = require('../test/person/ChangeName_Transaction');
-const { jsTPS } = require('../index')
-const readline = require('readline');
+import Person from "../test/person/Person.js"
+import ChangeName_Transaction from "../test/person/ChangeName_Transaction.js"
+import IncrementAge_Transaction from "../test/person/IncrementAge_Transaction.js"
+import { jsTPS } from "../index.js";
+import readline from "node:readline";
 
 const IO = readline.createInterface({
     input: process.stdin,

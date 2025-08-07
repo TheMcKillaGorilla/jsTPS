@@ -1,4 +1,4 @@
-const { jsTPS_Transaction } = require('../../index');
+import { jsTPS_Transaction } from '../../index.js';
 
 /**
  * IncrementAge_Transaction.js
@@ -10,7 +10,7 @@ const { jsTPS_Transaction } = require('../../index');
  * @author THE McKilla Gorilla (accept no imposters)
  * @version 1.0
  */
-class IncrementAge_Transaction extends jsTPS_Transaction {
+export default class IncrementAge_Transaction extends jsTPS_Transaction {
     /**
      * Constructor for this transaction, it initializes this
      * object with all the data needed to both do and undo
@@ -51,5 +51,3 @@ class IncrementAge_Transaction extends jsTPS_Transaction {
             +   "---undo decrements Person age by to " + this.inc + "\n";
     }
 }
-
-module.exports = { IncrementAge_Transaction };

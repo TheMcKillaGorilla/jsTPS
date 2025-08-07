@@ -1,8 +1,9 @@
-const { Person } = require('./person/Person');
-const { IncrementAge_Transaction } = require('./person/IncrementAge_Transaction');
-const { ChangeName_Transaction } = require('./person/ChangeName_Transaction');
+import { expect } from 'vitest'
+import Person from "./person/Person.js"
+import ChangeName_Transaction from "./person/ChangeName_Transaction.js"
+import IncrementAge_Transaction from "./person/IncrementAge_Transaction.js"
 
-TestUtils = {
+export const TestUtils = {
     makeIncrementAgeTransaction(inc) {
         return new IncrementAge_Transaction(this.actualPerson, inc);
     },
@@ -49,5 +50,3 @@ TestUtils = {
         expect(tps.hasTransactionToUndo()).toBe(canUndo);
     }
 }
-
-module.exports = { TestUtils };

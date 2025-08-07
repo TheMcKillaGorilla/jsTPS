@@ -1,9 +1,10 @@
-const { jsTPS, jsTPSTransaction } = require('../index');
-const { TestUtils } = require('./testUtils');
+import { beforeAll, beforeEach, afterEach, afterAll, expect, test } from 'vitest';
+import { jsTPS } from '../index.js';
+import { TestUtils } from "./testUtils.js"
 let tps;
 
 /**
- * Jest test script for the jsTPS framework. Testing will verify that the transaction processing
+ * Vitest test script for the jsTPS framework. Testing will verify that the transaction processing
  * system is properly updated as transactions are processed (i.e. adding plus doing), undone, and redone
  * in various combinations.
  *  
@@ -36,12 +37,6 @@ beforeAll(() => {
 });
 
 /**
- * Executed once after all tests are performed.
- */
-afterAll(() => {
-});
-
-/**
  * Executed before each test is performed.
  */
 beforeEach(() => {
@@ -56,7 +51,13 @@ afterEach(() => {
 });
 
 /**
- * Jest test to make sure constructor creates an instance of jsTPS.
+ * Executed once after all tests are performed.
+ */
+afterAll(() => {
+});
+
+/**
+ * Vitest test to make sure constructor creates an instance of jsTPS.
  */
 test('Test #1) should create an instance of jsTPS', () => {
     const instance = new jsTPS();
@@ -64,7 +65,7 @@ test('Test #1) should create an instance of jsTPS', () => {
 });
 
 /**
- * Jest test for a brand new empty stack, then processTransaction
+ * Vitest test for a brand new empty stack, then processTransaction
  */
 test('Test #2) brand new empty stack, then processTransaction', () => {
     // REBUILD THE PERSON TEST DATA
@@ -90,7 +91,7 @@ test('Test #2) brand new empty stack, then processTransaction', () => {
 });
 
 /**
- * Jest test for process three transactions, then undo three transaction, then process a new transaction
+ * Vitest test for process three transactions, then undo three transaction, then process a new transaction
  */
 test('Test #3) process three transactions, then undo three transaction, then process a new transaction', () => {
     // REBUILD THE PERSON TEST DATA
@@ -126,7 +127,7 @@ test('Test #3) process three transactions, then undo three transaction, then pro
 });
 
 /**
- * Jest test for process three transactions, then undo three transaction, then redo two transactions, then process a new transaction
+ * Vitest test for process three transactions, then undo three transaction, then redo two transactions, then process a new transaction
  */
 test('Test #4) process three transactions, then undo three transaction, then redo two transactions, then process a new transaction', () => {
     // REBUILD THE PERSON TEST DATA
@@ -151,7 +152,7 @@ test('Test #4) process three transactions, then undo three transaction, then red
 });
 
 /**
- * Jest test for process three transactions, then undo three transaction, then redo three transactions, then process a new transaction
+ * Vitest test for process three transactions, then undo three transaction, then redo three transactions, then process a new transaction
  */
 test('Test #5) process three transactions, then undo three transaction, then redo three transactions, then process a new transaction', () => {
     // REBUILD THE PERSON TEST DATA
@@ -178,7 +179,7 @@ test('Test #5) process three transactions, then undo three transaction, then red
 });
 
 /**
- * Jest test for process three transactions, then undo three transactions, then redo one transaction, then process two new transactions
+ * Vitest test for process three transactions, then undo three transactions, then redo one transaction, then process two new transactions
  */
 test('Test #6) process three transactions, then undo three transactions, then redo one transaction, then process two new transactions', () => {
     // REBUILD THE PERSON TEST DATA
@@ -205,7 +206,7 @@ test('Test #6) process three transactions, then undo three transactions, then re
 });
 
 /**
- * Jest test for process five transactions, then undo three transactions, then redo one transaction, then undo two transactions
+ * Vitest test for process five transactions, then undo three transactions, then redo one transaction, then undo two transactions
  */
 test('Test #7) process five transactions, then undo three transactions, then redo one transaction, then undo two transactions', () => {
     // REBUILD THE PERSON TEST DATA
@@ -236,7 +237,7 @@ test('Test #7) process five transactions, then undo three transactions, then red
 });
 
 /**
- * Jest test for process five transactions, then undo two transactions, then process two transactions, then undo three transactions
+ * Vitest test for process five transactions, then undo two transactions, then process two transactions, then undo three transactions
  */
 test('Test #8) process five transactions, then undo three transactions, then process two transactions, then undo three transactions', () => {
     // REBUILD THE PERSON TEST DATA
@@ -267,7 +268,7 @@ test('Test #8) process five transactions, then undo three transactions, then pro
 });
 
 /**
- * Jest test for process five transactions, then undo four transactions, then redo two transactions
+ * Vitest test for process five transactions, then undo four transactions, then redo two transactions
  */
 test('Test #9) process five transactions, then undo four transactions, then redo two transactions', () => {
     // REBUILD THE PERSON TEST DATA
@@ -299,7 +300,7 @@ test('Test #9) process five transactions, then undo four transactions, then redo
 });
 
 /**
- * Jest test for undoing a transaction on an empty stack, should throw an exception
+ * Vitest test for undoing a transaction on an empty stack, should throw an exception
  */
 test('Test #10) undoing a transaction on an empty stack, should throw an exception', () => {
     // REBUILD THE PERSON TEST DATA
@@ -313,7 +314,7 @@ test('Test #10) undoing a transaction on an empty stack, should throw an excepti
 });
 
 /**
- * Jest test for undoing a transaction when there are none to undo, should throw an exception
+ * Vitest test for undoing a transaction when there are none to undo, should throw an exception
  */
 test('Test #11) undoing a transaction when there are none to undo, should throw an exception', () => {
     // REBUILD THE PERSON TEST DATA
@@ -347,7 +348,7 @@ test('Test #11) undoing a transaction when there are none to undo, should throw 
 });
 
 /**
- * Jest test for redoing a transaction on an empty stack, should throw an exception
+ * Vitest test for redoing a transaction on an empty stack, should throw an exception
  */
 test('Test #12) redoing a transaction on an empty stack, should throw an exception', () => {
     // REBUILD THE PERSON TEST DATA
@@ -361,7 +362,7 @@ test('Test #12) redoing a transaction on an empty stack, should throw an excepti
 });
 
 /**
- * Jest test for redoing a transaction when there are none to redo, should throw an exception
+ * Vitest test for redoing a transaction when there are none to redo, should throw an exception
  */
 test('Test #13) redoing a transaction when there are none to redo, should throw an exception', () => {
     // REBUILD THE PERSON TEST DATA
@@ -390,7 +391,7 @@ test('Test #13) redoing a transaction when there are none to redo, should throw 
 });
 
 /**
- * Jest test for peeking at a transaction when there is only one in the stack
+ * Vitest test for peeking at a transaction when there is only one in the stack
  */
 test('Test #14) peeking at a transaction when there is only one in the stack', () => {
     // REBUILD THE PERSON TEST DATA
@@ -419,7 +420,7 @@ test('Test #14) peeking at a transaction when there is only one in the stack', (
 });
 
 /**
- * Jest test for peeking at a transaction at the top of a stack after multiple undos and redos
+ * Vitest test for peeking at a transaction at the top of a stack after multiple undos and redos
  */
 test('Test #15) peeking at a transaction at the top of a stack after multiple undos and redos', () => {
     // REBUILD THE PERSON TEST DATA
@@ -449,7 +450,7 @@ test('Test #15) peeking at a transaction at the top of a stack after multiple un
 });
 
 /**
- * Jest test for peeking at a transaction in the middle of a stack after multiple undos and redos
+ * Vitest test for peeking at a transaction in the middle of a stack after multiple undos and redos
  */
 test('Test #16) peeking at a transaction in the middle of a stack after multiple undos and redos', () => {
     // REBUILD THE PERSON TEST DATA
@@ -477,7 +478,7 @@ test('Test #16) peeking at a transaction in the middle of a stack after multiple
 });
 
 /**
- * Jest test for peeking at a transaction at the bottom of a stack after multiple undos and redos
+ * Vitest test for peeking at a transaction at the bottom of a stack after multiple undos and redos
  */
 test('Test #17) peeking at a transaction at the bottom of a stack after multiple undos and redos', () => {
     // REBUILD THE PERSON TEST DATA

@@ -1,10 +1,11 @@
 # jsTPS - A JavaScript Transaction Processing System
 
 The jsTPS framework provides an easy to use transaction processing system
-to assist in the creation of undo/redo systems for JavaScript.<br />
+to assist in the creation of undo/redo systems for JavaScript. Note, the 
+framework uses an ES Modules format.<br />
 <br />
 
-## Installation
+## Node Installation
 
 Note that this library can be used in any JavaScript context. To make use of the <strong>jsTPS</strong> framework in your <strong>Node</strong> application you should install it using:
 
@@ -13,14 +14,20 @@ npm install jstps
 ```
 <br />
 
-## Usage
+## Front-End Usage
 
-Your application would generally only require one TPS, though it could use more. To start you'll need
-to create your jsTPS object, so to do so, use:
+Your application would generally only need one TPS. To start you'll need to create your jsTPS object, so 
+depending on where you put it you'll need to first import it. For example, if for a Web page root you have a
+js directory you might write:
 ```js
-const { jsTPS } = require('jstps');
+import { jsTPS } = import './js/jstps/index.js'
 let tps = new jsTPS();
 ```
+You would then adjust that path relative to the file making use of it and where you choose to place it in
+your own directory structure. 
+
+## Custom Transactions
+
 Note that you will need to define your own transactions for whatever it is that your
 application aims to do and undo. To do so, define a class that extends <code>jsTPS_Transaction</code>
 and override the <code>doTransaction</code> and <code>undoTransaction</code> functions. Also note that this
@@ -67,7 +74,7 @@ package, which really has three components:<br />
  are the framework and are defined inside <strong>index.js</strong> in the package's root directory.<br /><br /></li>
  <li><strong>Demo</strong> - found in <code>./bin/demo.js</code>, this demonstrates use of the
  framework in a runnable example.<br /><br /></li>
- <li><strong>Tests</strong> - found in <code>./test/test.js</code>, this contains Jest Unit tests
+ <li><strong>Tests</strong> - found in <code>./test/test.js</code>, this contains Vitest Unit tests
  that verify the framework is in proper working order.<br /><br /></li>
 </ol>
 
@@ -91,7 +98,7 @@ design such that undo and redo are only provided as options if they can be used.
 ## Running Tests
 
 Should you fork (or download) the <strong>jsTPS</strong> project you can also run tests that
-ensure the API does everything it indends. To run these tests, make sure <a href='https://jestjs.io/'>Jest</a> is installed and
+ensure the API does everything it indends. To run these tests, make sure <a href='https://vitest.dev/'>Vitest</a> is installed and
 then run the tests using:
 ```bash
 npm test

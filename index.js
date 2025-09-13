@@ -12,14 +12,14 @@ export class jsTPS_Transaction {
      * This method is called by jsTPS when a transaction is executed.
      */
     executeDo() {
-        console.log("doTransaction - MISSING IMPLEMENTATION");
+        console.log("executeDo - MISSING IMPLEMENTATION");
     }
 
     /**
      * This method is called by jsTPS when a transaction is undone.
      */
     executeUndo() {
-        console.log("undoTransaction - MISSING IMPLEMENTATION");
+        console.log("executeUndo - MISSING IMPLEMENTATION");
     }
 }
 
@@ -89,7 +89,7 @@ export class jsTPS {
     doTransaction() {
         if (this.hasTransactionToDo()) {
             let transaction = this.transactions[this.topIndex];
-            transaction.doTransaction();
+            transaction.executeDo();
             this.topIndex++;
         }
         else {
@@ -235,7 +235,7 @@ export class jsTPS {
     undoTransaction() {
         if (this.hasTransactionToUndo()) {
             let transaction = this.transactions[this.topIndex-1];
-            transaction.undoTransaction();
+            transaction.executeUndo();
             this.topIndex--;
         }
         else {

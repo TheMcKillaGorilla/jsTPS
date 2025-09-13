@@ -29,14 +29,14 @@ export default class IncrementAge_Transaction extends jsTPS_Transaction {
     /**
      * This transaction simply adds the data to the transaction stack.
      */
-    doTransaction() {
+    executeDo() {
         this.person.age += this.inc;
     }
 
     /**
      * As the reverse of do, this method substracts from num.
      */
-    undoTransaction() {
+    executeUndo() {
         this.person.age -= this.inc;
     }
 

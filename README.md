@@ -30,15 +30,15 @@ npm install jstps
 
 Note that you will need to define your own transactions for whatever it is that your
 application aims to do and undo. To do so, define a class that extends <code>jsTPS_Transaction</code>
-and override the <code>doTransaction</code> and <code>undoTransaction</code> functions. Also note that this
+and override the <code>executeDo</code> and <code>executeUndo</code> functions. Also note that this
 library does not currently do anything to help coordinate anything asynchronous. So, if your transactions will
 be executing asynchronous do or undo functionality you'll need to manage that yourself. As an example, if we 
 assume that you have defined a class that represents a transaction called <code>MyTransaction</code>, which
 will be updating the state of some object (we'll just call it <strong>itemToUpdate</strong>), we might say
 that we have an event handler that listens for user interactions and when they occur gathers the data associated
 with the event in <strong>changeData</strong> and send it to our transaction, which of course it will use
-to update <strong>itemToUpdate</strong> when the <code>doTransaction</code> is performed and undone when
-<code>undoTransaction</code> is performed. So use of these methods is as easy as:
+to update <strong>itemToUpdate</strong> when the <code>executeDo</code> is performed and undone when
+<code>executeUndo</code> is performed. So use of these methods is as easy as:
 
 ```js
 // IN AN EVENT HANDLER 

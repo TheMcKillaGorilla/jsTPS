@@ -30,14 +30,14 @@ export default class ChangeName_Transaction extends jsTPS_Transaction {
     /**
      * This transaction simply adds the data to the transaction stack.
      */
-    doTransaction() {
+    executeDo() {
         this.person.name = this.newName;
     }
 
     /**
      * As the reverse of do, this method substracts from num.
      */
-    undoTransaction() {
+    executeUndo() {
         this.person.name = this.oldName;
     }
 

@@ -187,25 +187,6 @@ export class jsTPS {
     }
 
     /**
-     * Pushes a transaction onto the top of the transaction stack, but does not execute (do)
-     * the transaction. Note, if there are transactions that can be redone when this
-     * is executed they will be lost.
-     * 
-     * @param {jsTPS_Transaction} transaction - The transaction object to be put at the
-     * top of the stack. Note, this function does not execute the transaction and thus
-     * it does not update the index of the top of the stack.
-     */
-    pushTransaction(transaction) {
-        // FIRST ADD THE TRANSACTION TO THE TOP OF THE STACK
-        this.transactions[this.topIndex] = transaction;
-
-        // NOW WE NEED TO UPDATE THE SIZE OF THE STACK, WHICH AFTER A TRANSACTION
-        // IS PUSHED ONTO THE TOP, WILL ALWAYS BE TWO MORE THAN topIndex, SINCE
-        // THE TRANSACTION HAS NOT YET BEEN EXECUTED.
-        this.size = this.topIndex + 1;
-    }
-
-    /**
      * Builds and returns a textual representation of the transaction processing
      * system, which summarizes the contents of the transaction stack.
      * 
